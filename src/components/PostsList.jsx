@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import PostCard from './PostCard';
 export default function PostsList() {
 
     const [postslist, setPostslist] = useState([])
@@ -9,6 +9,7 @@ export default function PostsList() {
             try {
                 const response = await fetch('https://dummyjson.com/posts')
                 const data = await response.json()
+                console.log(data)
                 setPostslist(data.posts)
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -20,14 +21,17 @@ export default function PostsList() {
     
     const listItem = postslist.map((post) => {
         return (
-            <li key={post.id}>{post.body}</li>
+            <PostCard tags={post.tags} key={post.id} title={post.title}>{post.body}</PostCard>
         )
     })
 
     return (
-        <ul>
+        <div>
             <h1>Posts</h1>
+            <div className="card-container">
+                
             {listItem}
-        </ul>
+            </div>
+        </div>
     );
 }
