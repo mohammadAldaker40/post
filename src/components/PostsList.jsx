@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState  } from 'react';
 import PostCard from './PostCard';
 export default function PostsList() {
-
     const [postslist, setPostslist] = useState([])
 
     useEffect(() => {
