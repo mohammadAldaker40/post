@@ -27,9 +27,8 @@ export default function PostsList() {
     return (
         <div>
             <h1>Posts</h1>
-            <div className="card-container">
-                
-            {listItem}
+            <div className="card-container">   
+                {listItem}
             </div>
         </div>
     );
