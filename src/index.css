@@ -39,6 +39,7 @@ code {
   justify-content: center;
   padding: 10px;
   margin: 10px;
+  margin-top: 0px;
 }
 
 .addFormContainer button {
@@ -95,10 +96,10 @@ code {
 } 
 
 .search-bar input {
-  width: 300px;
+  width: 80%;
   height: 30px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
   border: 3px solid #302e2e;
 }
 
@@ -129,9 +130,10 @@ code {
   padding: 30px;
   margin: 10px;
   text-align: center;
-  height: 65vh;
+  min-height: 65vh;
+  height: fit-content;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: xx-large;
+  font-size: x-large;
   color: #302e2e;
 }
 
@@ -176,7 +178,8 @@ code {
   width: 100% ;
   justify-content: center;
   text-align: center;
-  font-size: 38pt;
+  font-size: 32pt;
+
 }
 
 #linkpost {

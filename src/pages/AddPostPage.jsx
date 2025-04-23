@@ -13,7 +13,7 @@ export default function AddPostPage() {
     const title = useRef() ; 
     const body = useRef() ;     
     const UserId  = useRef() ; 
-    const dialog = useRef() ; 
+
 
     const [bodyValidate , setBodyValidate ] = useState(false) ; 
     const [addPost , setAddPost ] = useState(false) ; 
