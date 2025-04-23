@@ -11,3 +11,17 @@ export async function getPostById(id) {
 }
 
 
+export async function fetchAddPost (title , text , userId) {
+    const res = await fetch('https://dummyjson.com/posts/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title,
+          userId: userId,
+          body:text
+          /* other post data */
+        })
+      })
+      const data = res.json()
+      return data ; 
+    }
