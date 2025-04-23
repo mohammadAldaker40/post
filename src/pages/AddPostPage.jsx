@@ -20,6 +20,7 @@ export default function AddPostPage() {
     const navigator = useNavigate("/")
     const handle = async (event) => {
         event.preventDefault()
+        console.log("fetching data")
             async function getAddPost (){
             try {
 
@@ -35,10 +36,12 @@ export default function AddPostPage() {
                     
                     const data = await fetchAddPost(inputTitle , inputTxt , inputUserId) ;
                     console.log(data) 
-                    navigator("/")
+                    
                     setAddPost(true) ;
 
                 }
+
+                console.log(addPost)
                 
             } catch (error) {
                 console.log(error || "couldn't add post")
@@ -47,15 +50,9 @@ export default function AddPostPage() {
             await getAddPost()
     }
 
-    if (addPost) {
-        return (
-        <>
-            <Dialog open/>
-        </>
-        )
+    function handleEnd() {
+        navigator("/")
     }
-
-   
 
 
 
@@ -77,7 +74,7 @@ export default function AddPostPage() {
                 post text : 
             </label>
             <textarea required ref={body} type="text" name="body" placeholder="type your post text here >>"/>
-
+            {!addPost && <p>text must be more than 100 letter !!</p>}
 
             <label htmlFor="userId">
                User Id : 
@@ -90,6 +87,8 @@ export default function AddPostPage() {
             </button>
             
         </form>
+
+        {addPost&&<Dialog onClick = {handleEnd}/>}
 
         </div>
     ) ;

@@ -30,7 +30,7 @@ export default function PostsList() {
 
     return (
         <div className='card-container'>
-            <h1>Posts</h1>
+
             <div className="card-container">   
                 {listItem}
             </div>
