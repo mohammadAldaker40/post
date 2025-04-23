@@ -1,5 +1,6 @@
-import { useEffect, useState  } from 'react';
+import { useEffect, useState } from 'react';
 import PostCard from './PostCard';
+
 export default function PostsList() {
     const [postslist, setPostslist] = useState([])
 
@@ -20,12 +21,15 @@ export default function PostsList() {
     
     const listItem = postslist.map((post) => {
         return (
-            <PostCard tags={post.tags} key={post.id} title={post.title}>{post.body}</PostCard>
+                <PostCard key={post.id} id={post.id} tags={post.tags} title={post.title}>
+                    {post.body}
+                </PostCard>
+            
         )
     })
 
     return (
-        <div>
+        <div className='card-container'>
             <h1>Posts</h1>
             <div className="card-container">   
                 {listItem}
