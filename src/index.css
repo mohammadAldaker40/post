@@ -253,3 +253,27 @@ code {
   background-color: #626aad;
   border-color: #626aad;
 }
+
+.home-page-header{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+}
+
+#linkBtn button {
+  margin: 48px;
+  padding: 15px;
+  width: 80%;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #727272;
+  border-color: #302e2e;
+}
+
+#linkBtn button:hover {
+  background-color: #302e2e;
+  color: #fff;
+  border-color: #302e2e;
+}
