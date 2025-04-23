@@ -13,6 +13,7 @@ export default function AddPostPage() {
     const title = useRef() ; 
     const body = useRef() ;     
     const UserId  = useRef() ; 
+    const dialog = useRef() ; 
 
     const [bodyValidate , setBodyValidate ] = useState(false) ; 
     const [addPost , setAddPost ] = useState(false) ; 
@@ -57,10 +58,11 @@ export default function AddPostPage() {
 
 
     return (
-<div className="AddPostContainer">
-<div id="AddPostHeader">
-    <h2>Add Post</h2>
-</div>
+        <>
+    <div className={addPost ? "AddPostContainer itsTrue" : "AddPostContainer" } >
+        <div id="AddPostHeader">
+            <h2>Add Post</h2>
+        </div>
 
         <form className="addFormContainer">
             
@@ -88,8 +90,10 @@ export default function AddPostPage() {
             
         </form>
 
-        {addPost&&<Dialog onClick = {handleEnd}/>}
 
-        </div>
+    </div>
+    {addPost&&<Dialog onClick = {handleEnd}/>}
+        
+    </>
     ) ;
 }

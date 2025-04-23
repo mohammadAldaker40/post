@@ -135,7 +135,36 @@ code {
   color: #302e2e;
 }
 
+.dialog{
+  background-color: #484848;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  z-index: 1000;
+  overflow: auto;
+  color: #b2acac;
+}
 
+.dialog button{
+  width:50% ; 
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #767fd3;
+}
+
+.dialog button:hover {
+  background-color: #464b75;
+  color: #fff;
+}
 
 .post-detailes-header {
   padding: 10px;
@@ -253,6 +282,14 @@ code {
   background-color: #626aad;
   border-color: #626aad;
 }
+
+.itsTrue{
+  opacity: 0.3;
+  background-color: #201f1f;
+}
+
+
+
 
 .home-page-header{
   display: flex;
