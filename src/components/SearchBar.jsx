@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
+import { Link } from "react-router-dom";
 
 export default function SearchBar({ onSearchChange }) {
     const [search, setSearch] = useState('');
@@ -48,6 +49,9 @@ export default function SearchBar({ onSearchChange }) {
     return (
         <div>
             <div className="search-bar">
+                <Link id="linkBtn" to="/post/add-post">
+                    <button>Add Post</button>
+                </Link>
                 <input 
                     type="text" 
                     placeholder="Search posts..." 
