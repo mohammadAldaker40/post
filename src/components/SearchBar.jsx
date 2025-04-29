@@ -1,67 +1,41 @@
-import { useState, useEffect } from "react";
-import PostCard from "./PostCard";
+import React, { useState, useRef } from 'react';
 import { Link } from "react-router-dom";
 
-export default function SearchBar({ onSearchChange }) {
-    const [search, setSearch] = useState('');
-    const [posts, setPosts] = useState([]);
-    const [filteredPosts, setFilteredPosts] = useState([]);
+export default function SearchBar({ onSearch }) {
+    const [searchTerm, setSearchTerm] = useState('');
+    const searchInput = useRef();
 
-    useEffect(() => {
-        async function fetchPosts() {
-            try {
-                const res = await fetch('https://dummyjson.com/posts');
-                const data = await res.json();
-                setPosts(data.posts);
-                setFilteredPosts(data.posts);
-            } catch (error) {
-                console.error('Error fetching posts:', error);
-            }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        onSearch(searchInput.current.value);
+    };
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        if (!value.trim()) {
+            onSearch('');
         }
+    };
 
-        fetchPosts();
-    }, []);
-
-    useEffect(() => {
-        if (search.trim() === '') {
-            setFilteredPosts(posts);
-            onSearchChange(false);
-        } else {
-            const filtered = posts.filter(post => 
-                post.title.toLowerCase().includes(search.toLowerCase()) ||
-                post.body.toLowerCase().includes(search.toLowerCase())
-            );
-            setFilteredPosts(filtered);
-            onSearchChange(true);
-        }
-    }, [search, posts, onSearchChange]);
-
-    function handleSearch(event) {
-        setSearch(event.target.value);
-    }
-
-    const listItem = filteredPosts.map(post => (
-        <PostCard key={post.id} title={post.title} tags={post.tags}>
-            {post.body}
-        </PostCard>
-    ));
-    
     return (
-        <div>
-            <div className="search-bar">
-                <Link id="linkBtn" to="/post/add-post">
-                    <button>Add Post</button>
-                </Link>
-                <input 
-                    type="text" 
-                    placeholder="Search posts..." 
-                    value={search}
-                    onChange={handleSearch} 
+        <div className="search-bar">
+            <Link id="linkBtn" to="/post/add-post">
+                <button>Add Post</button>
+            </Link>
+            <form onSubmit={handleSubmit} className="search-form">
+                <input
+                    ref={searchInput}
+                    type="text"
+                    placeholder="Search posts..."
+                    value={searchTerm}
+                    onChange={handleChange}
+                    className="search-input"
                 />
-            </div>
-            <div className="card-container">
-                {search.length > 0 && listItem}
-            </div>
+                <button type="submit" className="search-button">
+                    Search
+                </button>
+            </form>
         </div>
     );
 }

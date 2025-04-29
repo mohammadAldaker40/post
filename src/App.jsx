@@ -1,7 +1,7 @@
 import './assets/App.css';
 import HomePage from './pages/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PostDetailesPage from './pages/PostDetailesPage';
+import PostDetailsPage from './pages/PostDetailsPage';
 import AddPostPage from './pages/AddPostPage';
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/post/:id" element={<PostDetailesPage />} />
-      <Route path="/post/add-post" element={<AddPostPage/>} />
+        <Route path="/post/:id" element={<PostDetailsPage />} />
+        <Route path="/post/add-post" element={<AddPostPage />} />
       </Routes>
     </BrowserRouter>
   );
