@@ -6,12 +6,12 @@
 }
 
 :root {
-  --dark-purple: #433461;  /* Deep, rich purple */
-  --light-purple: #7b3aed;  /* Bright, vibrant purple */
+  --dark-purple: #433461; /* Deep, rich purple */
+  --light-purple: #7b3aed; /* Bright, vibrant purple */
   --accent-pink: #ff3b99;
   --text-light: #ffffff;
   --text-dark: #0a0a0a;
-  --bg-light: #f1e8ff;    /* Soft purple tinted background */
+  --bg-light: #f1e8ff; /* Soft purple tinted background */
   --bg-white: #ffffff;
   --shadow: 0 8px 30px rgba(93, 33, 212, 0.2);
 }
@@ -40,7 +40,7 @@ body {
   margin: 0 auto 3rem;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+
   border-radius: 20px;
   box-shadow: var(--shadow);
 }
@@ -64,8 +64,7 @@ body {
   border: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  font-size: 1rem;
+
   transition: transform 0.2s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
@@ -96,7 +95,7 @@ body {
 
 .search-button::after,
 #linkBtn button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -127,7 +126,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem  0 ;
+  padding: 2rem 0;
 }
 
 /* Post Card Styles */
@@ -188,7 +187,6 @@ body {
   font-size: 1rem;
   opacity: 0.8;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -500,8 +498,8 @@ body {
 .add-post-container {
   background: linear-gradient(
     135deg,
-    #4c3281 0%,    /* Deep royal purple */
-    #7b3aed 100%   /* Bright electric purple */
+    #4c3281 0%,
+    /* Deep royal purple */ #7b3aed 100% /* Bright electric purple */
   );
   min-height: 100vh;
   margin: 0;
@@ -514,8 +512,8 @@ body {
 .add-post-container.its-true {
   background: linear-gradient(
     135deg,
-    #4c3281 0%,    /* Rich purple */
-    #7b3aed 100%    /* Warmer success purple */
+    #4c3281 0%,
+    /* Rich purple */ #7b3aed 100% /* Warmer success purple */
   );
 }
 
@@ -538,7 +536,7 @@ body {
   max-width: 800px;
   padding: 2.5rem;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(89, 39, 255, 0.25);
   display: flex;
@@ -736,7 +734,7 @@ body.dialog-open {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -935,7 +933,6 @@ select:focus {
   margin: 4rem auto;
   padding: 3rem;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(89, 39, 255, 0.15);
   text-align: center;
@@ -984,8 +981,6 @@ select:focus {
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -1058,8 +1053,6 @@ select:focus {
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   padding: 0.5rem 0;
   opacity: 0;
   visibility: hidden;
@@ -1141,7 +1134,7 @@ select:focus {
   .mobile-nav {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .mobile-nav-content {
     height: calc(60px + env(safe-area-inset-top));
   }
